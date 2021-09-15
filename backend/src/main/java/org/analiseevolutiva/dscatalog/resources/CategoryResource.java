@@ -2,7 +2,7 @@ package org.analiseevolutiva.dscatalog.resources;
 
 import java.util.List;
 
-import org.analiseevolutiva.dscatalog.entities.Category;
+import org.analiseevolutiva.dscatalog.dto.CategoryDTO;
 import org.analiseevolutiva.dscatalog.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +22,9 @@ public class CategoryResource {
 	private CategoryService service;
 
 	@GetMapping
-	public ResponseEntity<List <Category>> findALL() {
+	public ResponseEntity<List <CategoryDTO>> findALL() {
 		
-		List<Category> list = service.findALL();
+		List<CategoryDTO> list = service.findALL();
 		
 		return ResponseEntity.ok().body(list);
 
